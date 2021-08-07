@@ -27,7 +27,7 @@ atom = PeriodicImages(r[0])
 print(atom)
 print("Shape:", n.shape(atom))
 
-# Here, and before calculating distances and angles, pair potential shall be calculated and minimized, I have been trying to do this for two weeks but the algorithms are just too long (and Allen & Tildesley are awful writers).
+# Here, and before calculating distances and angles, pair potential shall be calculated and minimized. I have been trying to do this for two weeks but the algorithms are just too long (and Allen & Tildesley are awful writers).
 
 # Putting all coordinates in one list in preparation of distance and angle calculations
 AllCoordinates = []
