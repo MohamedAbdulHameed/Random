@@ -42,7 +42,7 @@ for i in AllCoordinates:
         if (i != j).all(): # Doesn't calculate distances and angles for identical coordinates
             d = n.sqrt( (i[0]-j[0])**2 + (i[1]-j[1])**2 + (i[2]-j[2])**2 )
             Distances.append(d)
-            if d <= 1.0:
+            if d <= 1.0: # Cutoff = 1 cell parameter
                 ang = n.degrees(n.arccos((n.dot(i, n.transpose(j))) / (n.linalg.norm(i)*n.linalg.norm(j)))) # Messy but correct
                 Angles.append(ang)
 
@@ -53,6 +53,8 @@ print("Average distance in fractional units =", AverageDistance)
 
 AverageAngle = sum(Angles)/len(Angles)
 print("Average angle in degrees =", AverageAngle)
+
+# Plotting the normalized frequency distribution of angles for atom within a cutoff of 1 cell parameter
 
 p.hist(AngleDist, bins = 100, density = True, histtype = 'step')
 p.xlabel("Angles in degrees")
